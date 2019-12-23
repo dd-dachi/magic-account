@@ -1,0 +1,13 @@
+{
+    "mongoDBConnection": "mongodb://localhost:27017/magic_account_prod",
+
+    "fromUserEmail": "yourbusiness@gmail.com",
+    "fromUserEmailPassword": "yourpassword",
+    "mailServerHost": "smtp.gmail.com",
+    "mailServerPort": 587,
+
+    "jwtSecretKey": "Prod-SecretKey",
+
+    "apiDomain": "http://localhost:3090/",
+    "uiDomain": "http://localhost:4900/#/"
+}

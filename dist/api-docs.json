@@ -1,0 +1,584 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "MagicAccount Module Documentation",
+    "description": "MagicAccount Module Documentation",
+    "termsOfService": "http://swagger.io/terms/"
+  },
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Tag1",
+      "description": "MagicAccount Module Documentation"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/text"
+  ],
+  "paths": {
+    "/api/v1/ma/user/login": {
+      "post": {
+        "tags": [
+          "User Login"
+        ],
+        "summary": "MagicAccount, login/sign-in by using UserID or Email and password",
+        "description": "",
+        "operationId": "login",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "login",
+            "in": "body",
+            "description": "To Login, provide the login credentials",
+            "required": true,
+            "type": "string",
+            "schema": {
+              "$ref": "#/definitions/login"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/definitions/ResponseObj",
+            "description": "Login Successful"
+          },
+          "400": {
+            "$ref": "#/definitions/ResponseObj",
+            "description": "Invalid Credentials"
+          },
+          "500": {
+            "$ref": "#/definitions/ResponseObj",
+            "description": "An unknown error occurred"
+          }
+        }
+      }
+    },
+    "/api/v1/ma/user/login/status": {
+      "put": {
+        "tags": [
+          "User Login Status Update"
+        ],
+        "summary": "MagicAccount, Login Status Update",
+        "description": "MagicAccount, Login Status Update",
+        "operationId": "loginStatusUpdate",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Provide token to Update User Login Status",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/definitions/ResponseObj",
+            "description": "User Login Status Update Successful"
+          },
+          "400": {
+            "$ref": "#/definitions/ResponseObj",
+            "description": "User Login Status Update Failed"
+          },
+          "500": {
+            "$ref": "#/definitions/ResponseObj",
+            "description": "An unknown error occurred"
+          }
+        }
+      }
+    },
+    "/api/v1/ma/user/signup": {
+      "post": {
+        "tags": [
+          "User Account Creation"
+        ],
+        "summary": "MagicAccount, User Account Creation",
+        "description": "MagicAccount, User Account Creation",
+        "operationId": "euSignup",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "euSignup",
+            "in": "body",
+            "description": "To Create Account, provide the Signup Details",
+            "required": true,
+            "type": "string",
+            "schema": {
+              "$ref": "#/definitions/euSignup"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/definitions/ResponseObj",
+            "description": "User Account Creation Successful"
+          },
+          "400": {
+            "$ref": "#/definitions/ResponseObj",
+            "description": "User Account Creation Failed"
+          },
+          "500": {
+            "$ref": "#/definitions/ResponseObj",
+            "description": "An unknown error occurred"
+          }
+        }
+      }
+    },
+    "/api/v1/ma/user/profile": {
+      "put": {
+        "tags": [
+          "User Profile Update"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Provide token to Update User Profile",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "euProfileUpdate",
+            "in": "body",
+            "description": "User Profile Update",
+            "required": true,
+            "type": "string",
+            "schema": {
+              "$ref": "#/definitions/euProfileUpdate"
+            }
+          }
+        ],
+        "summary": "User Profile Update",
+        "description": "User Profile Update",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/definitions/ResponseObj",
+            "description": "User Profile Updated Successfully"
+          },
+          "400": {
+            "$ref": "#/definitions/ResponseObj",
+            "description": "User Profile Update Failed"
+          },
+          "500": {
+            "$ref": "#/definitions/ResponseObj",
+            "description": "An unknown error occurred"
+          }
+        }
+      }
+    },
+    "/api/v1/eu/profile/changepassword": {
+      "put": {
+        "tags": [
+          "User - Change Password"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Provide token to Update User Change password",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "euProfileChangePassword",
+            "in": "body",
+            "description": "User Profile change password",
+            "required": true,
+            "type": "string",
+            "schema": {
+              "$ref": "#/definitions/euProfileChangePassword"
+            }
+          }
+        ],
+        "summary": "User Profile Change Password",
+        "description": "User Profile Change Password",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/definitions/ResponseObj",
+            "description": "User Profile Change Password Updated Successfully"
+          },
+          "400": {
+            "$ref": "#/definitions/ResponseObj",
+            "description": "User Profile Change Password Failed"
+          },
+          "500": {
+            "$ref": "#/definitions/ResponseObj",
+            "description": "An unknown error occurred"
+          }
+        }
+      }
+    },
+    "/api/v1/ma/user/profile/preference/": {
+      "put": {
+          "tags": [
+              "User Profile Preferences"
+          ],
+          "parameters": [
+              {
+                  "name": "token",
+                  "in": "header",
+                  "description": "Provider token to User Profile Preferences Update",
+                  "required": true,
+                  "type": "string"
+              },
+              {
+                  "name": "euProfilePreferences",
+                  "in": "body",
+                  "description": "User Profile Preferences Update",
+                  "required": true,
+                  "type": "string",
+                  "schema": {
+                      "$ref": "#/definitions/euProfilePreferences"
+                  }
+              }
+          ],
+          "summary": "User Profile Preferences Update",
+          "description": "User Profile Preferences Update",
+          "consumes": [
+              "application/json"
+          ],
+          "produces": [
+              "application/json"
+          ],
+          "responses": {
+              "200": {
+                  "$ref": "#/definitions/ResponseObj",
+                  "description": "User Profile Preferences Updated Successfully"
+              },
+              "400": {
+                  "$ref": "#/definitions/ResponseObj",
+                  "description": "User Profile Preferences Update Failed"
+              },
+              "500": {
+                  "$ref": "#/definitions/ResponseObj",
+                  "description": "An unknown error occurred"
+              }
+          }
+      }
+    },
+    "/api/v1/ma/user/deposit": {
+      "put": {
+          "tags": [
+              "User Magic Account Deposit"
+          ],
+          "parameters": [
+              {
+                  "name": "token",
+                  "in": "header",
+                  "description": "Provider token to update magic account",
+                  "required": true,
+                  "type": "string"
+              },
+              {
+                  "name": "euMagicAccountUpdate",
+                  "in": "body",
+                  "description": "User Magic Account Deposit",
+                  "required": true,
+                  "type": "string",
+                  "schema": {
+                      "$ref": "#/definitions/euMagicAccountUpdate"
+                  }
+              }
+          ],
+          "summary": "User Magic Account Deposit",
+          "description": "User Magic Account Deposit",
+          "consumes": [
+              "application/json"
+          ],
+          "produces": [
+              "application/json"
+          ],
+          "responses": {
+              "200": {
+                  "$ref": "#/definitions/ResponseObj",
+                  "description": "User Magic Account Updated Successfully"
+              },
+              "400": {
+                  "$ref": "#/definitions/ResponseObj",
+                  "description": "User Magic Account Update Failed"
+              },
+              "500": {
+                  "$ref": "#/definitions/ResponseObj",
+                  "description": "An unknown error occurred"
+              }
+          }
+      }
+    },
+    "/api/v1/ma/user/withdraw": {
+      "put": {
+          "tags": [
+              "User Magic Account Withdraw"
+          ],
+          "parameters": [
+              {
+                  "name": "token",
+                  "in": "header",
+                  "description": "Provider token to update magic account",
+                  "required": true,
+                  "type": "string"
+              },
+              {
+                  "name": "euMagicAccountUpdate",
+                  "in": "body",
+                  "description": "User Magic Account Withdraw",
+                  "required": true,
+                  "type": "string",
+                  "schema": {
+                      "$ref": "#/definitions/euMagicAccountUpdate"
+                  }
+              }
+          ],
+          "summary": "User Magic Account Withdraw",
+          "description": "User Magic Account Withdraw",
+          "consumes": [
+              "application/json"
+          ],
+          "produces": [
+              "application/json"
+          ],
+          "responses": {
+              "200": {
+                  "$ref": "#/definitions/ResponseObj",
+                  "description": "User Magic Account Updated Successfully"
+              },
+              "400": {
+                  "$ref": "#/definitions/ResponseObj",
+                  "description": "User Magic Account Update Failed"
+              },
+              "500": {
+                  "$ref": "#/definitions/ResponseObj",
+                  "description": "An unknown error occurred"
+              }
+          }
+      }
+    },
+    "/api/v1/ma/user/balances": {
+      "get": {
+          "tags": [
+              "User Magic Account Balances"
+          ],
+          "parameters": [
+              {
+                  "name": "token",
+                  "in": "header",
+                  "description": "Provider token to view magic account balances",
+                  "required": true,
+                  "type": "string"
+              }
+          ],
+          "summary": "User Magic Account Balances",
+          "description": "User Magic Account Balances",
+          "consumes": [
+              "application/json"
+          ],
+          "produces": [
+              "application/json"
+          ],
+          "responses": {
+              "200": {
+                  "$ref": "#/definitions/ResponseObj",
+                  "description": "User Magic Account Updated Successfully"
+              },
+              "400": {
+                  "$ref": "#/definitions/ResponseObj",
+                  "description": "User Magic Account Update Failed"
+              },
+              "500": {
+                  "$ref": "#/definitions/ResponseObj",
+                  "description": "An unknown error occurred"
+              }
+          }
+      }
+    }
+  },
+
+  "definitions": {
+    "login": {
+      "type": "object",
+      "required": [
+        "userID",
+        "password"
+      ],
+      "properties": {
+        "userID": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "appType": {
+          "type": "string"
+        },
+        "deviceOS": {
+          "type": "string"
+        },
+        "expoPushToken": {
+          "type": "string"
+        }
+      }
+    },
+    "euSignup": {
+      "type": "object",
+      "required": [
+        "email",
+        "userID",
+        "password"
+      ],
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "mobileNumber": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "userID": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "euVerifyUserID": {
+      "type": "object",
+      "required": [
+        "userID"
+      ],
+      "properties": {
+        "userID": {
+          "type": "string"
+        }
+      }
+    },
+    "euProfileUpdate": {
+      "type": "object",
+      "required": [
+      ],
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "mobileNumber": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "dob": {
+          "type": "string"
+        },
+        "oldUserIconPath": {
+          "type": "string"
+        }
+      }
+    },
+    "euProfileChangePassword": {
+      "type": "object",
+      "required": [
+        "currentpassword",
+        "newpassword"
+      ],
+      "properties": {
+        "currentPassword": {
+          "type": "string"
+        },
+        "newPassword": {
+          "type": "string"
+        }
+      }
+    },
+    "euProfilePreferences": {
+      "type": "object",
+      "required": [
+         "defaultTimezone",
+          "dateFormat"
+      ],
+      "properties": {
+         
+          "defaultTimezone": {
+              "type": "string"
+          },
+          "dateFormat": {
+              "type": "string"
+          }
+      }
+    },
+    "euMagicAccountUpdate": {
+      "type": "object",
+      "required": [
+         "amount"
+      ],
+      "properties": {         
+          "amount": {
+              "type": "number"
+          }
+      }
+    },
+    "ResponseObj": {
+      "type": "object",
+      "required": [
+        "statusCode",
+        "statusMessage",
+        "statusResult"
+      ],
+      "properties": {
+        "statusCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "statusMessage": {
+          "type": "string"
+        },
+        "statusResult": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

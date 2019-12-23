@@ -1,0 +1,14 @@
+{
+    "auditActionTypes": ["Create", "Update", "Delete"],
+    "userStatuses": {
+        "active": "Active",
+        "blocked": "Blocked",
+        "hold": "Hold",
+        "inactive": "Inactive"   
+    },
+    "userRoles": {
+        "admin": "Admin",
+        "superAdmin": "Super Admin",
+        "customer": "Customer"
+    }
+}

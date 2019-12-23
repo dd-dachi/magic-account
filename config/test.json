@@ -1,0 +1,13 @@
+{
+    "mongoDBConnection": "mongodb://localhost:28017/magic_account_test",
+
+    "fromUserEmail": "yourbusiness@gmail.com",
+    "fromUserEmailPassword": "yourpassword",
+    "mailServerHost": "smtp.gmail.com",
+    "mailServerPort": 587,
+
+    "jwtSecretKey": "Test-SecretKey",
+
+    "apiDomain": "http://localhost:3080/",
+    "uiDomain": "http://localhost:4800/#/"
+}

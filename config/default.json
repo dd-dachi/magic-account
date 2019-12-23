@@ -1,0 +1,35 @@
+{
+    "projectName": "MagicAccount",
+    "defaultSalt": "86cf75841318f5137097f2157d9a9ea5",
+    "saltSize": 32,
+
+    "loggerName": "MagicAccountLogger",
+    "loggerFilesPath": "logs/magicaccount.api.log",
+    "loggerDatePattern": "YYMMDD",
+    "loggerFilesLevel": "debug",
+
+    "loginUserExpireTimeType": "hours",
+    "loginUserExpireTime": 72,
+
+    "smsUserRegOTPExpireTime": 10,
+    "smsUserRegOTPExpireTimeType": "minutes",
+
+    "auditAction": {
+        "create": "Create",
+        "update": "Update",
+        "delete": "Delete"
+    },
+    "notesStatus": {
+        "read": "Read",
+        "unread": "Unread"
+    },
+
+    "collectionAuditingInfo": "auditing_info",
+    "collectionNotifications": "notifications",
+    "collectionUsers": "users",
+    "collectionUsersKyc": "users_kyc",
+    "collectionUsersLogs": "users_logs",
+    "collectionUsersVerifications": "users_verifications",
+    "collectionLookupsData": "lookups_data",
+    "collectionLocale": "locale"
+}
