@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "async": "^3.1.0",
-    "body-parser": "~1.17.1",
+    "body-parser": "~1.20.1",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "config": "^3.0.1",
@@ -19,7 +19,7 @@
     "crypto": "^1.0.1",
     "debug": "~2.6.3",
     "dotenv": "^8.1.0",
-    "express": "~4.15.2",
+    "express": "~4.15.5",
     "express-device": "^0.4.2",
     "express-session": "^1.15.6",
     "jwt-simple": "^0.5.5",
